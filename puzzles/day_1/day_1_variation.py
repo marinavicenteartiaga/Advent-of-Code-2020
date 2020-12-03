@@ -1,4 +1,4 @@
-from puzzles.config import resources
+from puzzles.utils import resources
 
 
 def find_matching_values(values):
