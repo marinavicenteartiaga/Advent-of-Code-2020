@@ -35,7 +35,7 @@ def get_correct_passwords(input_info):
 
 
 def main():
-    input_list = resources.get_input_list_from_file("input_day2.txt")
+    input_list = resources.get_input_list_from_file_not_optimized("input_day2.txt")
     print(input_list)
     value_list = resources.get_data_from_input_list_format_day2(input_list)
     result = get_correct_passwords(value_list)

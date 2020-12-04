@@ -16,6 +16,11 @@ def get_input_list_from_file(file):
     my_file.close()
     return values_str
 
+def get_input_list_from_file(file):
+    with open(file, 'r') as file:
+        values = [line.strip() for line in file]
+    return values
+
 
 def get_data_from_input_list_format_day2(input_list):
     values = []
