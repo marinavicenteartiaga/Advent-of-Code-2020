@@ -46,3 +46,34 @@ def str_to_list(input_string):
 
 def print_input_list(input_string):
     print(str_to_list(input_string))
+
+
+def input_text_to_list_of_dictionaries(passports):
+    all_keys_values = []
+    for passport in range(0, len(passports)):
+        keys = []
+        values = []
+        key_value = []
+        is_ok = True
+        for element in range(0, len(passports[passport])):
+            key = ''
+            value = ''
+            for i in range(0, len(passports[passport][element])):
+                key = key + passports[passport][element][i]
+                if i == 2:
+                    keys.append(key)
+                    key = ''
+                if i > 3:
+                    value = value + passports[passport][element][i]
+            values.append(value)
+        key_value.append(keys)
+        key_value.append(values)
+        all_keys_values.append(key_value)
+
+    ld = []
+    for i in range(0, len(all_keys_values)):
+        d = dict(zip(all_keys_values[i][0], all_keys_values[i][1]))
+        ld.append(d)
+
+    return ld
+

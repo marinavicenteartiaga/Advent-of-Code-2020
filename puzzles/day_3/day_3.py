@@ -3,6 +3,18 @@ from puzzles.utils import resources
 input_data = resources.get_input_list_from_file("input_day3.txt")
 
 
+def get_route1():
+    rows = len(input_data)
+    columns = len(input_data[0])
+    counter = 0
+    selected_values = []
+    for i in range(0, len(rows)):
+        selected_values.append(input_data[i][counter])
+        counter = (counter + 3) % columns
+    n_trees = selected_values.count('#')
+    return n_trees
+
+
 def get_route(right, down):
     rows = len(input_data)
     columns = len(input_data[0])
